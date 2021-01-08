@@ -9,7 +9,7 @@ onready var animation = $AnimatedSprite
 onready var health = 3
 
 func _ready():
-	self.connect("update_hearts",$HeartUI, "_update_health")
+	self.connect("update_hearts",get_parent().get_node("HeartUI"), "_update_health")
 
 func _process(delta):
 	velocity.y += GRAVITY
