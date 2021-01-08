@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://sheep.png" type="Texture" id=2]
+[ext_resource path="res://sheepmove.png" type="Texture" id=3]
+[ext_resource path="res://sheepup.png" type="Texture" id=4]
+[ext_resource path="res://sheepfall.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "fallDown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "sheepMove",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "jumpUp",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 6.10274
+height = 2.22385
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 31.9205, 51.392 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -0.408791, -0.445953 )
+scale = Vector2( 0.945495, 0.94054 )
+frames = SubResource( 2 )
+animation = "sheepMove"
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource( 1 )
