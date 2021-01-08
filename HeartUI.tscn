@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://HBoxContainer.gd" type="Script" id=1]
+[ext_resource path="res://heart.png" type="Texture" id=2]
+
+[node name="HeartUI" type="HBoxContainer"]
+margin_left = -32.7449
+margin_top = -51.5222
+margin_right = 2675.26
+margin_bottom = 848.478
+rect_scale = Vector2( 0.01, 0.01 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 900.0
+margin_bottom = 900.0
+texture = ExtResource( 2 )
+stretch_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = 904.0
+margin_right = 1804.0
+margin_bottom = 900.0
+texture = ExtResource( 2 )
+stretch_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+margin_left = 1808.0
+margin_right = 2708.0
+margin_bottom = 900.0
+texture = ExtResource( 2 )
+stretch_mode = 3

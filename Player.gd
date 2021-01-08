@@ -4,10 +4,12 @@ extends KinematicBody2D
 const GRAVITY = 4.2
 const JUMP_SPEED = -150
 var velocity = Vector2.ZERO
+signal update_hearts
 onready var animation = $AnimatedSprite
 onready var health = 3
 
-# Called when the node enters the scene tree for the first time.
+func _ready():
+	self.connect("update_hearts",$HeartUI, "_update_health")
 
 func _process(delta):
 	velocity.y += GRAVITY
@@ -21,6 +23,8 @@ func _process(delta):
 
 func _lose_health():
 	health -= 1
+	emit_signal("update_hearts",health)
+	print("signal emitted")
 	if health == 0:
 		get_tree().quit()
 	
