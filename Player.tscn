@@ -1,30 +1,68 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://sheep.png" type="Texture" id=2]
 [ext_resource path="res://sheepmove.png" type="Texture" id=3]
 [ext_resource path="res://sheepup.png" type="Texture" id=4]
 [ext_resource path="res://sheepfall.png" type="Texture" id=5]
+[ext_resource path="res://sheep2cut.png" type="Texture" id=6]
+[ext_resource path="res://sheepmove1cut.png" type="Texture" id=7]
+[ext_resource path="res://sheepmove2cut.png" type="Texture" id=8]
+[ext_resource path="res://sheepfall2cut.png" type="Texture" id=9]
+[ext_resource path="res://sheepup2cut.png" type="Texture" id=10]
+[ext_resource path="res://sheep1cut.png" type="Texture" id=11]
+[ext_resource path="res://sheepup1cut.png" type="Texture" id=12]
+[ext_resource path="res://sheepfall1cut.png" type="Texture" id=13]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 7 ) ],
 "loop": true,
-"name": "fallDown",
+"name": "2sheepMove",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 8 ) ],
 "loop": true,
-"name": "sheepMove",
+"name": "1sheepMove",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "2jumpUp",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "2fallDown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "3fallDown",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "jumpUp",
+"name": "3jumpUp",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "3sheepMove",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "1jumpUp",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "1fallDown",
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 6.10274
 height = 2.22385
 
@@ -36,13 +74,11 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -0.408791, -0.445953 )
-scale = Vector2( 0.945495, 0.94054 )
-frames = SubResource( 2 )
-animation = "sheepMove"
-frame = 1
-playing = true
+position = Vector2( -0.830189, -0.820529 )
+scale = Vector2( 1.00168, 0.990483 )
+frames = SubResource( 1 )
+animation = "3sheepMove"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
-shape = SubResource( 1 )
+shape = SubResource( 2 )

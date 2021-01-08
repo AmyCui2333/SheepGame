@@ -1,6 +1,7 @@
 extends Area2D
 
 var collided_check = 0
+signal collided
 
 func _process(delta):
 	position.x-= 50*delta
@@ -8,13 +9,9 @@ func _process(delta):
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
-
-
+	
 func _on_Obs1_body_entered(body):
 	if collided_check == 0:
-		print(collided_check)
-		#if World.Player.life == 0:
-		#	get_tree().quit()
+		emit_signal("collided")
 		collided_check = 1
-		print(collided_check)
-		#World.Player.life -= 1
+
