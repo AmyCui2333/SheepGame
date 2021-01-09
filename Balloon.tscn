@@ -8,7 +8,7 @@ radius = 4.39505
 height = 4.97227
 
 [node name="Balloon" type="Area2D"]
-position = Vector2( 165.593, 23.0857 )
+position = Vector2( 167.065, 49.9944 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true

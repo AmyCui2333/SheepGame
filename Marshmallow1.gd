@@ -9,8 +9,7 @@ onready var marsh1_speed = get_parent().speed
 var rng = RandomNumberGenerator.new()
 func _ready():
 	rng.randomize()
-	position.y = rng.randi_range(10,45)
-	var my_random_number = rng.randf_range(-10.0, 10.0)
+	position.y = rng.randi_range(20,55)
 
 func _process(delta):
 	position.x -= marsh1_speed*delta

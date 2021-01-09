@@ -16,7 +16,7 @@ animations = [ {
 extents = Vector2( 4.74998, 7.625 )
 
 [node name="Obs1" type="Area2D"]
-position = Vector2( 172, 52 )
+position = Vector2( 172, 67 )
 collision_layer = 4
 script = ExtResource( 1 )
 __meta__ = {
@@ -27,6 +27,7 @@ __meta__ = {
 position = Vector2( -3.17383, -1.83748 )
 scale = Vector2( 1.42318, 1.245 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

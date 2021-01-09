@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://HeartUI.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Control.gd" type="Script" id=5]
 [ext_resource path="res://y2mate.com - Animal Sounds  Sheep Baa  Sound Effects.wav" type="AudioStream" id=6]
 [ext_resource path="res://musicbox (1).wav" type="AudioStream" id=7]
+[ext_resource path="res://background.png" type="Texture" id=8]
+[ext_resource path="res://ParallaxBackground.gd" type="Script" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 15, 0, 15, 15, 0, 15 )
@@ -38,13 +40,11 @@ points = PoolVector2Array( 0, 0, 15, 0, 15, 15, 0, 15 )
 script = ExtResource( 4 )
 
 [node name="HeartUI" parent="." instance=ExtResource( 2 )]
-margin_left = 1.99997
-margin_top = 2.00001
-margin_right = 2710.0
-margin_bottom = 902.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_constants/separation = 0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 34.7449, 53.5222 )
+position = Vector2( 29.0816, 67.9163 )
 collision_mask = 6
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -53,7 +53,7 @@ cell_size = Vector2( 15, 15 )
 collision_layer = 2
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0 )
+tile_data = PoolIntArray( 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
@@ -100,6 +100,16 @@ autoplay = true
 [node name="BalloonTimer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource( 9 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 240, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 119.19, 8.4757 )
+texture = ExtResource( 8 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
 [connection signal="timeout" from="Timer3" to="." method="_on_Timer3_timeout"]
