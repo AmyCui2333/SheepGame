@@ -2,18 +2,16 @@ extends Node2D
 
 const OBSTACLE= preload("res://Obs1.tscn")
 const MARSHMALLOW= preload("res://Marshmallow1.tscn")
-#onready var restart = $Restart
+const EAGLE = preload("res://Eagle.tscn")
+const BALLOON = preload("res://Balloon.tscn")
 
 var speed = 50
-
-#func _ready():
-#	restart.visible = false
 
 func get_speed():
 	return speed
 
 func inc_speed():
-	speed+= 10
+	speed += 10
 
 func _on_Timer_timeout():
 	var obstacle= OBSTACLE.instance()
@@ -26,3 +24,21 @@ func _on_Timer2_timeout():
 	marshmallow.connect("collided", $Player, "_increase speed")
 	marshmallow.connect("scored", $Control, "update_score")
 
+func _on_Timer3_timeout():
+	if $Player.flying == 1:
+		var eagle = EAGLE.instance()
+		var rng = RandomNumberGenerator.new()
+		rng.randomize()
+		$Timer3.wait_time = rng.randf_range(2.0,5.0)
+		add_child(eagle)
+		eagle.connect("collided",$Player, "hit_eagle")
+
+func _on_BalloonTimer_timeout():
+	if $Player.flying == -1:
+		var balloon = BALLOON.instance()
+		var rng = RandomNumberGenerator.new()
+		rng.randomize()
+		var p = rng.randi_range(1,20)
+		if p <=5 :
+			add_child(balloon)
+			balloon.connect("collided",$Player, "start_flying")
