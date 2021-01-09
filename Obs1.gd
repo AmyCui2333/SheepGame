@@ -2,6 +2,7 @@ extends Area2D
 
 var collided_check = 0
 signal collided
+signal scored
 
 onready var obs1_speed = get_parent().speed
 

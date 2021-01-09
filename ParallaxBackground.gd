@@ -1,9 +1,6 @@
 extends ParallaxBackground
 
 func _process(delta):
-	scroll_offset.x -= 5 * delta
+	scroll_offset.x -= 6 * delta
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

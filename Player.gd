@@ -65,11 +65,13 @@ func play_animation():
 			animation.visible = false
 			var floating = "float"
 			float_animation.play(str(health)+floating)
-			print("played")
+			
 	else:
 		animation.play("dead")
 		var restart = BUTTON.instance()
 		get_parent().add_child(restart)
+		var death = get_parent().get_node("Death")
+		death.play()
 		get_tree().paused = true
 		
 func hit_eagle():
