@@ -17,6 +17,7 @@ func _on_Timer_timeout():
 	var obstacle= OBSTACLE.instance()
 	add_child(obstacle)
 	obstacle.connect("collided", $Player, "_lose_health")
+	obstacle.connect("scored", $Control, "update_score_5")
 	
 func _on_Timer2_timeout():
 	var marshmallow= MARSHMALLOW.instance()
