@@ -2,8 +2,12 @@ extends Node2D
 
 const OBSTACLE= preload("res://Obs1.tscn")
 const MARSHMALLOW= preload("res://Marshmallow1.tscn")
+onready var RESTART = $Restart
 
 var speed = 50
+
+func _ready():
+		RESTART.visible = false
 
 func get_speed():
 	return speed
@@ -20,3 +24,5 @@ func _on_Timer2_timeout():
 	var marshmallow= MARSHMALLOW.instance()
 	add_child(marshmallow)
 	marshmallow.connect("collided", $Player, "_increase speed")
+	marshmallow.connect("scored", $Control, "update_score")
+

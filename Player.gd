@@ -1,10 +1,13 @@
 extends KinematicBody2D
 
 
-const GRAVITY = 4.2
+const GRAVITY = 5
 const JUMP_SPEED = -150
+const RESTART = preload("res://Restart.tscn")
+
 var velocity = Vector2.ZERO
 signal update_hearts
+signal dead
 onready var animation = $AnimatedSprite
 onready var health = 3
 
@@ -24,19 +27,23 @@ func _process(delta):
 func _lose_health():
 	health -= 1
 	emit_signal("update_hearts",health)
-	print("signal emitted")
-	if health == 0:
-		get_tree().quit()
+	
 	
 func play_animation():
 	var move = "sheepMove"
 	var jump = "jumpUp"
 	var fall = "fallDown"
 	if health > 0:	
-		if velocity.y<0:
+		if velocity.y < 0:
 			animation.play(str(health)+jump)
-		elif velocity.y>0 and is_on_floor():
+		elif velocity.y > 0 and is_on_floor():
 			animation.play(str(health)+move)
 		else:
 			animation.play(str(health)+fall)
+	else:
+		animation.play("dead")
+		get_tree().paused = true
+		var restart = get_parent().get_node("Restart")
+		restart.visible = true
+		
 	

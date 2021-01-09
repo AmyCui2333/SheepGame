@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://sheep.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://sheep1cut.png" type="Texture" id=11]
 [ext_resource path="res://sheepup1cut.png" type="Texture" id=12]
 [ext_resource path="res://sheepfall1cut.png" type="Texture" id=13]
+[ext_resource path="res://sheepdead.png" type="Texture" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -21,14 +22,14 @@ animations = [ {
 "name": "2sheepMove",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "3sheepMove",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 6 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "1sheepMove",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ) ],
-"loop": true,
-"name": "2jumpUp",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 13 ) ],
@@ -36,9 +37,9 @@ animations = [ {
 "name": "2fallDown",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 9 ) ],
 "loop": true,
-"name": "3fallDown",
+"name": "1fallDown",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
@@ -46,9 +47,9 @@ animations = [ {
 "name": "3jumpUp",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 12 ) ],
 "loop": true,
-"name": "3sheepMove",
+"name": "2jumpUp",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ) ],
@@ -56,9 +57,14 @@ animations = [ {
 "name": "1jumpUp",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "1fallDown",
+"name": "3fallDown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "dead",
 "speed": 5.0
 } ]
 
@@ -77,7 +83,7 @@ __meta__ = {
 position = Vector2( -0.830189, -0.820529 )
 scale = Vector2( 1.00168, 0.990483 )
 frames = SubResource( 1 )
-animation = "3sheepMove"
+animation = "dead"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
