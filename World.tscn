@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://HeartUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://grass.png" type="Texture" id=3]
 [ext_resource path="res://World.gd" type="Script" id=4]
 [ext_resource path="res://Control.gd" type="Script" id=5]
-[ext_resource path="res://Restart.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 15, 0, 15, 15, 0, 15 )
@@ -73,16 +72,13 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Control"]
-margin_left = 3.0
-margin_right = 51.0
-margin_bottom = 14.0
+margin_left = 5.35969
+margin_top = 1.88775
+margin_right = 56.3597
+margin_bottom = 15.8877
 text = "Score: 0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Restart" parent="." instance=ExtResource( 6 )]
-position = Vector2( 80, 45 )
-z_index = 7
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]

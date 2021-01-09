@@ -2,12 +2,12 @@ extends Node2D
 
 const OBSTACLE= preload("res://Obs1.tscn")
 const MARSHMALLOW= preload("res://Marshmallow1.tscn")
-onready var RESTART = $Restart
+#onready var restart = $Restart
 
 var speed = 50
 
-func _ready():
-		RESTART.visible = false
+#func _ready():
+#	restart.visible = false
 
 func get_speed():
 	return speed

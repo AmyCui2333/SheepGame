@@ -18,7 +18,6 @@ func _on_Marshmallow1_body_entered(body):
 	if collided_check == 0:
 		collided_check = 1
 		emit_signal("scored")
-		print("signal emitted")
 		get_parent().inc_speed()
 		self.visible = false
 		get_parent().get_node("Timer").wait_time += rng.randf_range(-0.1,0.05)

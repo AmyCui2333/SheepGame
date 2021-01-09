@@ -4,10 +4,12 @@ extends KinematicBody2D
 const GRAVITY = 5
 const JUMP_SPEED = -150
 const RESTART = preload("res://Restart.tscn")
+const BUTTON = preload("res://Button.tscn")
 
 var velocity = Vector2.ZERO
 signal update_hearts
 signal dead
+signal restart
 onready var animation = $AnimatedSprite
 onready var health = 3
 
@@ -42,8 +44,11 @@ func play_animation():
 			animation.play(str(health)+fall)
 	else:
 		animation.play("dead")
+		var restart = BUTTON.instance()
+#		self.connect("restart",restart,"make_visible")
+#		emit_signal("restart")
+		get_parent().add_child(restart)
 		get_tree().paused = true
-		var restart = get_parent().get_node("Restart")
-		restart.visible = true
+		
 		
 	
