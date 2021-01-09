@@ -13,6 +13,7 @@ signal dead
 signal restart
 onready var animation = $AnimatedSprite
 onready var health = 3
+onready var boing = $Boing
 onready var timer = get_parent().get_node("FlyTimer")
 
 func _ready():
@@ -24,6 +25,7 @@ func _process(delta):
 		
 		if Input.is_action_just_pressed("ui_up") and is_on_floor():
 			velocity.y = JUMP_SPEED
+			boing.play()
 		move_and_slide(velocity, Vector2.UP)
 		play_animation()
 	else:
