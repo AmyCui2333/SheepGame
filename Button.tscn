@@ -17,10 +17,10 @@ region_rect = Rect2( 0, 0, 364, 138 )
 
 [node name="Button" type="Button"]
 pause_mode = 2
-margin_left = 52.0081
-margin_top = 29.1054
-margin_right = 103.008
-margin_bottom = 49.1054
+margin_left = 52.6559
+margin_top = 35.4728
+margin_right = 103.656
+margin_bottom = 55.4728
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )

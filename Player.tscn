@@ -17,19 +17,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 11 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "2sheepMove",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "3sheepMove",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "1sheepMove",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 13 ) ],
@@ -37,19 +32,9 @@ animations = [ {
 "name": "2fallDown",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "1fallDown",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "3jumpUp",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ) ],
-"loop": true,
-"name": "2jumpUp",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ) ],
@@ -62,9 +47,24 @@ animations = [ {
 "name": "3fallDown",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 14 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "dead",
+"name": "3sheepMove",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "1sheepMove",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "1fallDown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "2jumpUp",
 "speed": 5.0
 } ]
 
@@ -83,7 +83,7 @@ __meta__ = {
 position = Vector2( -0.830189, -0.820529 )
 scale = Vector2( 1.00168, 0.990483 )
 frames = SubResource( 1 )
-animation = "dead"
+animation = "3sheepMove"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

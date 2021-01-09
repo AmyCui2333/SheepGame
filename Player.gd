@@ -21,10 +21,9 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
 		velocity.y = JUMP_SPEED
-	
+	move_and_slide(velocity, Vector2.UP)
 	play_animation()
 	
-	move_and_slide(velocity, Vector2.UP)
 
 func _lose_health():
 	health -= 1
