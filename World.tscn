@@ -6,7 +6,7 @@
 [ext_resource path="res://World.gd" type="Script" id=4]
 [ext_resource path="res://Control.gd" type="Script" id=5]
 [ext_resource path="res://y2mate.com - Animal Sounds  Sheep Baa  Sound Effects.wav" type="AudioStream" id=6]
-[ext_resource path="res://musicbox.wav" type="AudioStream" id=7]
+[ext_resource path="res://musicbox (1).wav" type="AudioStream" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 15, 0, 15, 15, 0, 15 )
