@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://restart.png" type="Texture" id=1]
+
+[node name="TextureButton" type="TextureButton"]
+margin_left = 45.0
+margin_top = 17.0
+margin_right = 99.0
+margin_bottom = 89.0
+texture_normal = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

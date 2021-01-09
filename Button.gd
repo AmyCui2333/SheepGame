@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 
 func _input(event):
 	if visible == true and event is InputEventMouseButton and event.is_pressed():

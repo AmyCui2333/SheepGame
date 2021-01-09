@@ -12,6 +12,7 @@ signal update_hearts
 signal dead
 signal restart
 onready var animation = $AnimatedSprite
+onready var float_animation = $FloatAnimation
 onready var health = 3
 onready var boing = $Boing
 onready var timer = get_parent().get_node("FlyTimer")
@@ -50,12 +51,21 @@ func play_animation():
 	var jump = "jumpUp"
 	var fall = "fallDown"
 	if health > 0:	
-		if velocity.y < 0:
-			animation.play(str(health)+jump)
-		elif velocity.y > 0 and is_on_floor():
-			animation.play(str(health)+move)
+		if flying == -1:
+			float_animation.visible = false
+			animation.visible = true
+			if velocity.y < 0:
+				animation.play(str(health)+jump)
+			elif velocity.y > 0 and is_on_floor():
+				animation.play(str(health)+move)
+			else:
+				animation.play(str(health)+fall)
 		else:
-			animation.play(str(health)+fall)
+			float_animation.visible = true
+			animation.visible = false
+			var floating = "float"
+			float_animation.play(str(health)+floating)
+			print("played")
 	else:
 		animation.play("dead")
 		var restart = BUTTON.instance()
